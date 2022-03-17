@@ -9,7 +9,7 @@ import {
   engine
 } from "../services";
 
-  
+
 @Component({
 })
 export default class BaseMixin extends Vue {
@@ -20,35 +20,35 @@ export default class BaseMixin extends Vue {
   @Prop({
     default: "formflowai"
   }) public webSocketEncryptkey!: string;
-   @Prop({
-     type:Object
-   }) public formIO!: any;
-  @Prop ({
-    default:()=>{
+  @Prop({
+    type: Object
+  }) public formIO!: any;
+  @Prop({
+    default: () => {
       return {
-        filterList:false,  filterTask:false, sort:false, form:false
+        filterList: false, filterTask: false, sort: false, form: false
       };
     }
-  }) 
-  
-  public disableComponents !: DisableComponentPropPayload ;
+  })
 
-   @Prop ({
-     default:()=>{
-       return {
-         assignee:false, group:false, followUpDate:false, dueDate:false, createdDate:false
-       };
-     }
-   }) public hideTaskDetails: any;
+  public disableComponents !: DisableComponentPropPayload;
 
-   @Prop({
-     default:false
-   }) private listItemCardStyle!: boolean;
+  @Prop({
+    default: () => {
+      return {
+        assignee: false, group: false, followUpDate: false, dueDate: false, createdDate: false
+      };
+    }
+  }) public hideTaskDetails: any;
+
+  @Prop({
+    default: false
+  }) private listItemCardStyle!: boolean;
 
   @Watch("token")
-   ontokenChange(newVal: string) {
-     localStorage.setItem("authToken", newVal);
-   }
+  ontokenChange(newVal: string) {
+    localStorage.setItem("authToken", newVal);
+  }
 
   checkProps() {
     if (!this.bpmApiUrl || this.bpmApiUrl === "") {
@@ -73,7 +73,7 @@ export default class BaseMixin extends Vue {
       console.warn("WEBSOCKET_ENCRYPT_KEY prop not passed");
     }
 
-    const decodeToken = JSON.parse(Buffer.from(this.token.split(".")[1], 'base64').toString('utf8'));
+    const decodeToken = JSON.parse(atob(this.token.split(".")[1]));
     localStorage.setItem("bpmApiUrl", `${this.bpmApiUrl}/${engine}`);
     localStorage.setItem("authToken", this.token);
     const currentUrl = `${window.location.protocol}//${window.location.host}`;

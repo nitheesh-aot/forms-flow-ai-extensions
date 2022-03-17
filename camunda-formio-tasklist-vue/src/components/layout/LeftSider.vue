@@ -3,7 +3,7 @@
     <TaskListSearch
       ref="taskListSearchRef"
       @update-task-list="onSearchUpdateTasklistResult"
-       v-if="!disableOption.filterTask" 
+      v-if="!disableOption.filterTask"
     />
     <div
       class="cft-list-group"
@@ -28,7 +28,6 @@
           :key="task.id"
           class="cft-list-group-item"
           aria-current="true"
-         
           @click="
             toggle(idx);
             showTaskDetails(task.id);
@@ -86,7 +85,11 @@
               v-if="task.followUp"
             >Follow up in {{ timedifference(task.followUp) }}</div>
           </div>
-          <task-variable :variables="task._embedded.variable" :filterTaskVariable="selectedFilterTaskVariable"/>
+          <task-variable
+            v-if="task._embedded"
+            :variables="task._embedded.variable"
+            :filterTaskVariable="selectedFilterTaskVariable"
+          />
         </div>
       </template>
       <div
@@ -117,7 +120,7 @@ import {
   Component, Mixins, Prop
 } from "vue-property-decorator";
 import {
-  DisableComponentPropPayload,Payload,
+  DisableComponentPropPayload, Payload,
 } from "../../models";
 import BaseMixin from "../../mixins/BaseMixin.vue";
 import Pagination from "./Pagination.vue";
@@ -147,7 +150,7 @@ export default class LeftSider extends Mixins(BaseMixin) {
     default: 0
   }) private containerHeight!: number;
   @Prop() private disableOption!: DisableComponentPropPayload;
-  @Prop() private selectedFilterTaskVariable!: object;
+  @Prop() private selectedFilterTaskVariable!: any;
 
   @serviceFlowModule.Getter("getFormsFlowTaskCurrentPage")
   private getFormsFlowTaskCurrentPage: any;
@@ -294,9 +297,9 @@ export default class LeftSider extends Mixins(BaseMixin) {
     height: 100px;
     overflow-y: auto;
     border-radius: 0;
-     .cft-card-list-group-item{
-       margin: 0.50rem 1rem;
-     }
+    .cft-card-list-group-item {
+      margin: 0.5rem 1rem;
+    }
     .cft-list-group-item {
       padding: 0.75rem 1rem;
       border-top: 1px solid #eee;

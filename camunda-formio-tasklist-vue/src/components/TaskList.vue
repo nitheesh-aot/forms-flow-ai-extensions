@@ -625,7 +625,7 @@ export default class Tasklist extends Mixins(TaskListMixin) {
   private tasks: TaskPayload[] = [];
   private fulltasks: TaskPayload[] = [];
   private formId: string = "";
-  private taskLoading!: boolean;
+  private taskLoading: boolean = false;
   private singleTaskLoading: boolean = false;
   private diagramLoading: boolean = false;
   private submissionId: string = "";
@@ -1353,7 +1353,7 @@ export default class Tasklist extends Mixins(TaskListMixin) {
     localStorage.removeItem("authToken");
     localStorage.removeItem("UserDetails");
     if (!this.$store?.hasModule("serviceFlowModule")) {
-      this.$store.registerModule("serviceFlowModule", serviceFlowModule);
+      this.$store?.registerModule("serviceFlowModule", serviceFlowModule);
     }
   }
 }
