@@ -11,10 +11,10 @@
         @click="deleteSort(sort, idx)"
         title="Remove Sorting Field"
       >
-        <i
-          class="fa fa-times"
+        <font-awesome-icon
+          icon="fa-times"
           aria-hidden="true"
-        ></i>
+        />
       </button>
       <div class="nav-item dropdown">
         <a
@@ -46,10 +46,10 @@
         @click="toggleSort(idx)"
         title="Ascending"
       >
-        <i
-          class="fa fa-arrow-up"
+        <font-awesome-icon
+          icon="fa-arrow-up"
           aria-hidden="true"
-        ></i>
+        />
       </button>
       <button
         class="btn btn-outline-primary btn-sm"
@@ -57,10 +57,10 @@
         @click="toggleSort(idx)"
         title="Descending"
       >
-        <i
-          class="fa fa-arrow-down"
+        <font-awesome-icon
+          icon="fa-arrow-down"
           aria-hidden="true"
-        ></i>
+        />
       </button>
     </div>
     <TaskSortOptions

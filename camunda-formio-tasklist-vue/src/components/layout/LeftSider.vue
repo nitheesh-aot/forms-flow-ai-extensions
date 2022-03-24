@@ -71,7 +71,7 @@
               :title="'Priority'"
             >{{ task.priority }}</div>
           </div>
-          <div class="d-flex w-100 task-details">
+          <div class="d-flex w-100 cft-task-details">
             <div
               class="days-ago due-date"
               data-bs-toggle="tooltip"
@@ -96,7 +96,7 @@
         v-else
         class="d-flex justify-content-center align-items-center py-5 mt-5"
       >
-        <i class="fa fa-exclamation-circle"></i>
+        <font-awesome-icon icon="fa-exclamation-circle" />
         <h4 class="mt-0 mx-2">No tasks found in the list.</h4>
       </div>
     </div>
@@ -245,6 +245,7 @@ export default class LeftSider extends Mixins(BaseMixin) {
 
   /*** to calculate the height and handling scroll views accordingly */
   calculateViewHeights() {
+    console.log(this.disableOption);
     const searchHeight = (this.$refs.taskListSearchRef as any)?.$el?.offsetHeight || 0;
     const paginationHeight = (this.$refs.taskListPaginationRef as any)?.$el?.offsetHeight || 0;
     if (this.containerHeight > 250) {

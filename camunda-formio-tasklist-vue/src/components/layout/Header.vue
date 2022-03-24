@@ -9,7 +9,7 @@
         data-bs-toggle="dropdown"
         aria-expanded="false"
       >
-        <i class="fa fa-wpforms mx-1"></i>
+        <font-awesome-icon icon="far fa-rectangle-list mx-1" />
         Filters
       </button>
       <ul

@@ -67,7 +67,7 @@
               >{{ task.name }}</h3>
             </div>
             <div
-              class="d-flex flex-column w-100 px-4 py-2 task-details"
+              class="d-flex flex-column w-100 px-4 py-2 ctf-task-height"
               :style="{
                 height: taskScrollableHeight
               }"
@@ -88,7 +88,10 @@
                 </p>
               </div>
               <div class="d-flex justify-content-between mb-4">
-                <section v-if="!hideTaskDetails.assignee" class="task-assignee">
+                <section
+                  v-if="!hideTaskDetails.assignee"
+                  class="task-assignee"
+                >
                   <label class="fw-bold">Task assignee</label>
                   <button
                     v-if="task.assignee"
@@ -97,13 +100,7 @@
                     data-bs-toggle="tooltip"
                     title="Click to change assignee"
                   >
-                    <i
-                      class="fa fa-pencil"
-                      :class="{
-                      'fa-times-circle-o':editAssignee,
-                      'fa-pencil': !editAssignee
-                    }"
-                    />
+                    <font-awesome-icon :icon="editAssignee ? 'far fa-times-circle': 'fa-pencil-alt'" />
                   </button>
                   <div class="d-flex align-items-baseline">
                     <template v-if="task.assignee">
@@ -127,7 +124,7 @@
                             data-bs-toggle="dropdown"
                             aria-expanded="false"
                           >
-                            <i class="fa fa-filter" />
+                            <font-awesome-icon icon="fa-filter" />
                           </button>
                           <ul
                             class="dropdown-menu"
@@ -150,7 +147,7 @@
                           data-bs-toggle="tooltip"
                           title="Set assignee"
                         >
-                          <i class="fa fa-check-circle-o fa-lg" />
+                          <font-awesome-icon icon="far fa-check-circle" />
                         </button>
                       </div>
                       <template v-else>
@@ -161,7 +158,7 @@
                           data-bs-toggle="tooltip"
                           title="Reset assignee"
                         >
-                          <i class="fa fa-times-circle-o" />
+                          <font-awesome-icon icon="far fa-times-circle" />
                         </button>
                       </template>
                     </template>
@@ -172,13 +169,13 @@
                       data-bs-toggle="tooltip"
                       title="Claim task"
                     >
-                      <i class="fa fa-plus" />
+                      <font-awesome-icon icon="fa-plus" />
                       <span class="mx-1">Claim</span>
                     </button>
                   </div>
                 </section>
                 <section
-                v-if="!hideTaskDetails.group" 
+                  v-if="!hideTaskDetails.group"
                   class="task-groups mx-4"
                   data-bs-toggle="tooltip"
                   title="Click to modify groups"
@@ -190,7 +187,7 @@
                     data-bs-toggle="modal"
                     data-bs-target="#groupsModal"
                   >
-                    <i class="fa fa-pencil" />
+                    <font-awesome-icon icon="fa-pencil" />
                   </button>
                   <div class="d-flex align-items-baseline group-name">
                     <template v-if="groupListNames && groupListNames.length">
@@ -202,7 +199,7 @@
                       data-bs-toggle="modal"
                       data-bs-target="#groupsModal"
                     >
-                      <i class="fa fa-plus" />
+                      <font-awesome-icon icon="fa-plus" />
                       <span class="mx-1">Add Groups</span>
                     </button>
                   </div>
@@ -217,16 +214,17 @@
                       <div class="modal-content">
                         <div class="modal-header">
                           <h5 class="modal-title">MANAGE GROUPS</h5>
-                          <i
+                          <font-awesome-icon
                             type="button"
-                            class="fa fa-times mx-2"
+                            icon="fa-times"
+                            class="mx-2"
                             data-bs-dismiss="modal"
                             aria-label="Close"
                             title="cancel"
-                          ></i>
+                          />
                         </div>
                         <div class="modal-body px-4 pb-5">
-                          <i class="fa fa-exclamation-circle"></i>
+                          <font-awesome-icon icon="fa-exclamation-circle" />
                           You can add a group by typing a group ID into the input
                           field and afterwards clicking the button with the plus sign.
                           <div class="d-flex my-3">
@@ -242,7 +240,7 @@
                               @click="addGroup"
                               :disabled="!setGroup"
                             >
-                              <i class="fa fa-plus" />
+                             <font-awesome-icon icon="fa-plus" />
                               <span class="mx-1">Add group</span>
                             </button>
                           </div>
@@ -259,7 +257,7 @@
                               title="Click to remove this group"
                             >
                               <div class="mx-1">{{ g.groupId }}</div>
-                              <i class="fa fa-times-circle-o" />
+                              <font-awesome-icon icon="far fa-times-circle" />
                             </div>
                           </div>
                         </div>
@@ -269,7 +267,10 @@
                 </section>
               </div>
               <div class="d-flex justify-content-between mb-2">
-                <section class="task-date-picker" v-if="!hideTaskDetails.followUpDate" >
+                <section
+                  class="task-date-picker"
+                  v-if="!hideTaskDetails.followUpDate"
+                >
                   <label class="fw-bold mb-1">Follow up</label>
                   <div
                     class="d-flex align-items-baseline"
@@ -285,7 +286,7 @@
                       data-bs-toggle="tooltip"
                       title="Click to remove FollowUp Date"
                     >
-                      <i class="fa fa-times-circle-o" />
+                      <font-awesome-icon icon="far fa-times-circle" />
                     </button>
                   </div>
                   <v-date-picker
@@ -302,12 +303,15 @@
                           @input="updateFollowUpDate"
                           placeholder="mm/dd/yyyy"
                         />
-                        <i class="fa fa-calendar-alt"></i>
+                        <font-awesome-icon icon="far fa-calendar-alt" />
                       </div>
                     </template>
                   </v-date-picker>
                 </section>
-                <section class="task-date-picker" v-if="!hideTaskDetails.dueDate" >
+                <section
+                  class="task-date-picker"
+                  v-if="!hideTaskDetails.dueDate"
+                >
                   <label class="fw-bold mb-1">Due date</label>
                   <div
                     class="d-flex align-items-baseline"
@@ -323,7 +327,7 @@
                       data-bs-toggle="tooltip"
                       title="Click to remove Due date"
                     >
-                      <i class="fa fa-times-circle-o" />
+                      <font-awesome-icon icon="far fa-times-circle" />
                     </button>
                   </div>
                   <v-date-picker
@@ -340,12 +344,12 @@
                           @input="updateDueDate"
                           placeholder="mm/dd/yyyy"
                         />
-                        <i class="fa fa-calendar-alt"></i>
+                        <font-awesome-icon icon="far fa-calendar-alt" />
                       </div>
                     </template>
                   </v-date-picker>
                 </section>
-                <section v-if="!hideTaskDetails.createdDate" >
+                <section v-if="!hideTaskDetails.createdDate">
                   <label class="fw-bold mb-1">Created</label>
                   <p
                     data-bs-toggle="tooltip"
@@ -456,7 +460,7 @@
                       <span class="sr-only">Loading...</span>
                     </div>
                   </div>
-                    <div
+                  <div
                     v-show="!diagramLoading"
                     class="cft-bpmn-viewer-container"
                   >
@@ -471,12 +475,12 @@
           </template>
           <div
             v-else
-            class="d-flex align-items-center justify-content-center task-details-empty"
+            class="d-flex align-items-center justify-content-center ctf-task-details-empty"
             :style="{
               height: taskScrollableHeight
             }"
           >
-            <i class="fa fa-exclamation-circle"></i>
+            <font-awesome-icon icon="fa-exclamation-circle" />
             <h4 class="mt-0 mx-2">Please select a task from the list</h4>
           </div>
         </div>
@@ -514,7 +518,6 @@
   </div>
 </template>
 <script lang="ts">
-import "font-awesome/scss/font-awesome.scss";
 import "../styles/user-styles.css";
 import "../styles/camundaFormIOTasklist.scss";
 import {
@@ -522,7 +525,7 @@ import {
   CamundaRest,
   SEARCH_USERS_BY,
   SocketIOService,
-  authenticateFormio, 
+  authenticateFormio,
   findFilterIdForDefaultFilterName,
   getFormDetails,
   getFormattedDateAndTime,
@@ -603,9 +606,9 @@ export default class Tasklist extends Mixins(TaskListMixin) {
   public taskSortOrder!: string;
   @Prop({
     default: () => [],
-  }) 
+  })
   protected taskDefaultFilterListNames !: string[];
- 
+
 
   @StoreServiceFlowModule.Getter("getFormsFlowTaskCurrentPage")
   private getFormsFlowTaskCurrentPage: any;
@@ -637,7 +640,7 @@ export default class Tasklist extends Mixins(TaskListMixin) {
   };
   public perPage: number = 10;
   private filterList: FilterPayload[] = [];
-  private selectedFilterTaskVariable={
+  private selectedFilterTaskVariable = {
 
   };
   private editAssignee: boolean = false;
@@ -678,8 +681,7 @@ export default class Tasklist extends Mixins(TaskListMixin) {
   checkforTaskID() {
     if (this.getTaskId) {
       this.taskIdValue = this.getTaskId;
-    }
-    if (!this.getTaskId) {
+    } else {
       const routeparams = this.$route?.query?.taskId;
       if (typeof routeparams === "string" && this.$route.query.taskId) {
         this.taskIdValue = routeparams;
@@ -888,7 +890,7 @@ export default class Tasklist extends Mixins(TaskListMixin) {
       },
       "highlight"
     );
-  
+
   }
 
   async getDiagramDetails() {
@@ -899,20 +901,20 @@ export default class Tasklist extends Mixins(TaskListMixin) {
 
   oncustomEventCallback = async (customEvent: CustomEventPayload) => {
     switch (customEvent.type) {
-    case "reloadTasks":
-      await this.reloadTasks();
-      break;
-    case "reloadCurrentTask":
-      await this.reloadCurrentTask();
-      break;
-    case "actionComplete":
-      this.onFormSubmitCallback(customEvent.actionType);
-      break;
-    default:
-      // this call is for formio
-      this.$root.$emit(customEvent.type, {
-        customEvent
-      });
+      case "reloadTasks":
+        await this.reloadTasks();
+        break;
+      case "reloadCurrentTask":
+        await this.reloadCurrentTask();
+        break;
+      case "actionComplete":
+        this.onFormSubmitCallback(customEvent.actionType);
+        break;
+      default:
+        // this call is for formio
+        this.$root.$emit(customEvent.type, {
+          customEvent
+        });
     }
   };
 
@@ -1174,7 +1176,7 @@ export default class Tasklist extends Mixins(TaskListMixin) {
     this.taskScrollableHeight = `${this.containerHeight - (titleHeight + 1)}px`;
   }
 
-  
+
   async mounted() {
     this.containerHeight = (this.$refs.taskListContainerRef as any).clientHeight;
     this.toastMsg = new Toast(this.$refs?.toastMsgRef as any);
@@ -1224,33 +1226,33 @@ export default class Tasklist extends Mixins(TaskListMixin) {
     );
     this.filterList = sortByPriorityList(filterListResult.data);
 
-    if(this.taskDefaultFilterListNames.length > 0){
-      this.filterList = this.filterList.filter(FilterList => { 
-        return this.taskDefaultFilterListNames.some(filter=>FilterList.name.includes(filter));
+    if (this.taskDefaultFilterListNames.length > 0) {
+      this.filterList = this.filterList.filter(FilterList => {
+        return this.taskDefaultFilterListNames.some(filter => FilterList.name.includes(filter));
       });
     }
 
-    if(this.filterList.length>0){
+    if (this.filterList.length > 0) {
       this.selectedfilterId = this.taskDefaultFilterListNames.length ? this.filterList[0].id : findFilterIdForDefaultFilterName(this.filterList, ALL_FILTER);
-      this.filterList.forEach(filterListItem=>{
-        if(filterListItem.id===this.selectedfilterId){
-          const newFilterVaribale= {
+      this.filterList.forEach(filterListItem => {
+        if (filterListItem.id === this.selectedfilterId) {
+          const newFilterVaribale = {
 
           };
           filterListItem.properties?.variables?.forEach(item => {
-            newFilterVaribale[item.name]=item.label;
+            newFilterVaribale[item.name] = item.label;
           });
-          this.selectedFilterTaskVariable= newFilterVaribale;
+          this.selectedFilterTaskVariable = newFilterVaribale;
 
         }
       });
-      
-     
+
+
     }
 
     else {
       this.tasks = [];
-      this.taskLoading=false;
+      this.taskLoading = false;
     }
 
     await this.reloadLHSTaskList();
@@ -1360,7 +1362,7 @@ export default class Tasklist extends Mixins(TaskListMixin) {
 </script>
 
 <style lang="scss" scoped>
-.task-details-empty {
+.ctf-task-details-empty {
   background: #fff;
   margin-left: 4px;
 }
@@ -1376,7 +1378,7 @@ export default class Tasklist extends Mixins(TaskListMixin) {
       color: #fff;
     }
   }
-  .task-details {
+  .ctf-task-height {
     height: 100px;
     overflow-y: auto;
   }
@@ -1471,10 +1473,10 @@ export default class Tasklist extends Mixins(TaskListMixin) {
   cursor: move;
   cursor: grab;
 }
-.cft-btn_zoom{
+.cft-btn_zoom {
   position: absolute;
   bottom: 10em;
-  right:5%;
+  right: 5%;
 }
 </style>
 <style>

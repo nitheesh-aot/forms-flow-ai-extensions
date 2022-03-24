@@ -5,7 +5,6 @@
 </template>
 
 <script lang="ts">
-import "font-awesome/scss/font-awesome.scss";
 import "semantic-ui-css/semantic.min.css";
 import "../styles/user-styles.css";
 import {

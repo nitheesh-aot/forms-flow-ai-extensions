@@ -1,6 +1,8 @@
 <template>
   <div>
-    <h3 class="mb-4"><i class="fa fa-list-alt"></i> Application History</h3>
+    <h3 class="mb-4">
+      <font-awesome-icon icon="far fa-list-alt" />
+      Application History</h3>
     <table
       class="table task-history-table"
       v-if="applicationId && taskHistoryList.length"
@@ -25,7 +27,7 @@
               :href="formatURL(h.formUrl)"
               target="_blank"
             >
-              <i class="fa fa-eye"></i>
+              <font-awesome-icon icon="far fa-eye" />
               View Submission
             </a>
           </td>

@@ -7,10 +7,10 @@
           @click="deleteSearchQueryElement(query, index)"
           title="Remove this filter"
         >
-          <i
-            class="fa fa-trash-o"
+          <font-awesome-icon
+            icon="far fa-trash-alt"
             aria-hidden="true"
-          ></i>
+          />
         </button>
         <div class="dropdown mx-2">
           <button
@@ -61,12 +61,12 @@
         <button
           class="btn btn-outline-success btn-sm mx-2"
           @click="showVariableValueItem(index)"
-        ><i class="fa fa-check"></i>
+        ><font-awesome-icon icon="fa-check" />
         </button>
         <button
           class="btn btn-outline-danger btn-sm"
           @click="rejectVariableItem(index)"
-        ><i class="fa fa-times"></i>
+        ><font-awesome-icon icon="fa-times" />
         </button>
       </div>
       <p
@@ -133,12 +133,12 @@
           @click="
                   setSearchQueryValue(selectedSearchQueries, index);
                   showSearchValueItem(index);"
-        ><i class="fa fa-check"></i>
+        ><font-awesome-icon icon="fa-check" />
         </button>
         <button
           class="btn btn-outline-danger btn-sm"
           @click="rejectSearchValueItem(index)"
-        ><i class="fa fa-times"></i>
+        ><font-awesome-icon icon="fa-times" />
         </button>
       </template>
       <div

@@ -17,16 +17,15 @@
         </div>
        </div>
        <div class="w-100 text-center" >
-       <i
-       class="fa fa-angle-down"
-       @click.stop="toggleShowMore"
-       :style="{transform: `${showMore ? 'rotate(180deg)' : 'rotate(0deg)'}`}"
-         data-toggle="tooltip" 
-         title="show more"
-         aria-hidden="true"
-       />
-     </div>
+        <font-awesome-icon icon="fa-angle-down" 
+          @click.stop="toggleShowMore"
+          :style="{transform: `${showMore ? 'rotate(180deg)' : 'rotate(0deg)'}`}"
+          data-toggle="tooltip" 
+          title="show more"
+          aria-hidden="true"
+        />
        </div>
+  </div>
 </template>
 
 <script lang="ts">

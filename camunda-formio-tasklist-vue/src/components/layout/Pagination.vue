@@ -13,7 +13,7 @@
           href="#"
           aria-label="first"
         >
-          <i class="fa fa-angle-double-left"></i>
+          <font-awesome-icon icon="fa-angle-double-left" />
         </a>
       </li>
       <li
@@ -39,7 +39,7 @@
           href="#"
           aria-label="last"
         >
-          <i class="fa fa-angle-double-right"></i>
+          <font-awesome-icon icon="fa-angle-double-right" />
         </a>
       </li>
     </ul>

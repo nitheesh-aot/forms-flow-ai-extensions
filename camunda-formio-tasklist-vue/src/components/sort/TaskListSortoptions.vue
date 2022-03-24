@@ -7,7 +7,7 @@
       aria-expanded="false"
       title="Add New Field For Sorting"
     >
-      <i class="fa fa-plus" />
+      <font-awesome-icon icon="fa-plus" />
     </a>
     <ul class="dropdown-menu">
       <li v-if="sortOptions.length">

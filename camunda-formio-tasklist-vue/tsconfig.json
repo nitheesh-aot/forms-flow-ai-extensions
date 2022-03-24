@@ -11,7 +11,9 @@
     "esModuleInterop": true,
     "allowSyntheticDefaultImports": true,
     "sourceMap": true,
+    "allowJs": true,
     "baseUrl": ".",
+    "resolveJsonModule": true,
     "types": [
       "webpack-env"
     ],
@@ -37,8 +39,9 @@
     "src/**/*.tsx",
     "src/**/*.vue",
     "tests/**/*.ts",
-    "tests/**/*.tsx"
-, "src/main.ts"  ],
+    "tests/**/*.tsx",
+    "src/main.ts"
+  ],
   "exclude": [
     "node_modules"
   ]
