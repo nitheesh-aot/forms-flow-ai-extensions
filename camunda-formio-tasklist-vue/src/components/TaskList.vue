@@ -563,6 +563,9 @@ import bootstrap, {
 import BpmnViewer from "bpmn-js/dist/bpmn-navigated-viewer.production.min.js";
 import DatePicker from "v-calendar/lib/components/date-picker.umd";
 import ExpandContract from "./addons/ExpandContract.vue";
+import {
+  FontAwesomeIcon
+} from '@fortawesome/vue-fontawesome';
 import FormEdit from "./form/Edit.vue";
 import FormView from "./form/View.vue";
 import {
@@ -592,6 +595,7 @@ const StoreServiceFlowModule = namespace("serviceFlowModule");
     FormEdit,
     FormView,
     VDatePicker: DatePicker,
+    FontAwesomeIcon,
   },
 })
 export default class Tasklist extends Mixins(TaskListMixin) {
