@@ -9,7 +9,7 @@
         data-bs-toggle="dropdown"
         aria-expanded="false"
       >
-        <font-awesome-icon icon="far fa-rectangle-list mx-1" />
+        <i class="fa-solid fa-rectangle-list mx-1"></i>
         Filters
       </button>
       <ul

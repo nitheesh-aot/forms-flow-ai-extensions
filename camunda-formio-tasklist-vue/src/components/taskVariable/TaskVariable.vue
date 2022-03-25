@@ -17,7 +17,7 @@
         </div>
        </div>
        <div class="w-100 text-center" >
-        <font-awesome-icon icon="fa-angle-down" 
+        <i class="fa-solid fa-angle-down" 
           @click.stop="toggleShowMore"
           :style="{transform: `${showMore ? 'rotate(180deg)' : 'rotate(0deg)'}`}"
           data-toggle="tooltip" 

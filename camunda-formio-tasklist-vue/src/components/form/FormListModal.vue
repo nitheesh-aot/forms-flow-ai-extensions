@@ -33,7 +33,7 @@
               data-bs-dismiss="modal"
               aria-label="Close"
             >
-              Close <font-awesome-icon icon="fa-times" />
+              Close <i class="fa-solid fa-times"></i>
             </button>
           </div>
           <div class="modal-body">
@@ -132,7 +132,7 @@
               @click="backClickToFormList"
               class="btn btn-outline-dark"
             >
-              <font-awesome-icon icon="fa-chevron-left" /> Back
+              <i class="fa-solid fa-chevron-left"></i> Back
             </button>
             <h5>SUBMIT FORM</h5>
             <button
@@ -142,7 +142,7 @@
               data-bs-dismiss="modal"
               aria-label="Close"
             >
-              Close <font-awesome-icon icon="fa-times" />
+              Close <i class="fa-solid fa-times"></i>
             </button>
           </div>
           <div class="modal-body">

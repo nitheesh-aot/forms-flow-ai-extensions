@@ -11,8 +11,8 @@
         @click="deleteSort(sort, idx)"
         title="Remove Sorting Field"
       >
-        <font-awesome-icon
-          icon="fa-times"
+        <i
+          class="fa-solid fa-times"
           aria-hidden="true"
         />
       </button>
@@ -46,8 +46,8 @@
         @click="toggleSort(idx)"
         title="Ascending"
       >
-        <font-awesome-icon
-          icon="fa-arrow-up"
+        <i
+          class="fa-solid fa-arrow-up"
           aria-hidden="true"
         />
       </button>
@@ -57,8 +57,8 @@
         @click="toggleSort(idx)"
         title="Descending"
       >
-        <font-awesome-icon
-          icon="fa-arrow-down"
+        <i
+          class="fa-solid fa-arrow-down"
           aria-hidden="true"
         />
       </button>

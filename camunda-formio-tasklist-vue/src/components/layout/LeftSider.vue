@@ -96,7 +96,7 @@
         v-else
         class="d-flex justify-content-center align-items-center py-5 mt-5"
       >
-        <font-awesome-icon icon="fa-exclamation-circle" />
+        <i class="fa-solid fa-exclamation-circle"></i>
         <h4 class="mt-0 mx-2">No tasks found in the list.</h4>
       </div>
     </div>
