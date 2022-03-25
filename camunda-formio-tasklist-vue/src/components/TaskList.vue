@@ -100,7 +100,10 @@
                     data-bs-toggle="tooltip"
                     title="Click to change assignee"
                   >
-                    <font-awesome-icon :icon="editAssignee ? 'far fa-times-circle': 'fa-pencil-alt'" />
+                    <i
+                      class="fa-solid"
+                      :class="editAssignee ? 'fa-times-circle': 'fa-pencil-alt'"
+                    ></i>
                   </button>
                   <div class="d-flex align-items-baseline">
                     <template v-if="task.assignee">
@@ -124,7 +127,7 @@
                             data-bs-toggle="dropdown"
                             aria-expanded="false"
                           >
-                            <font-awesome-icon icon="fa-filter" />
+                            <i class="fa-solid fa-filter"></i>
                           </button>
                           <ul
                             class="dropdown-menu"
@@ -147,7 +150,7 @@
                           data-bs-toggle="tooltip"
                           title="Set assignee"
                         >
-                          <font-awesome-icon icon="far fa-check-circle" />
+                          <i class="fa-solid fa-check-circle"></i>
                         </button>
                       </div>
                       <template v-else>
@@ -158,7 +161,7 @@
                           data-bs-toggle="tooltip"
                           title="Reset assignee"
                         >
-                          <font-awesome-icon icon="far fa-times-circle" />
+                          <i class="fa-solid fa-times-circle"></i>
                         </button>
                       </template>
                     </template>
@@ -169,7 +172,7 @@
                       data-bs-toggle="tooltip"
                       title="Claim task"
                     >
-                      <font-awesome-icon icon="fa-plus" />
+                      <i class="fa-solid fa-plus"></i>
                       <span class="mx-1">Claim</span>
                     </button>
                   </div>
@@ -187,7 +190,7 @@
                     data-bs-toggle="modal"
                     data-bs-target="#groupsModal"
                   >
-                    <font-awesome-icon icon="fa-pencil" />
+                    <i class="fa-solid fa-pencil"></i>
                   </button>
                   <div class="d-flex align-items-baseline group-name">
                     <template v-if="groupListNames && groupListNames.length">
@@ -199,7 +202,7 @@
                       data-bs-toggle="modal"
                       data-bs-target="#groupsModal"
                     >
-                      <font-awesome-icon icon="fa-plus" />
+                      <i class="fa-solid fa-plus"></i>
                       <span class="mx-1">Add Groups</span>
                     </button>
                   </div>
@@ -214,17 +217,17 @@
                       <div class="modal-content">
                         <div class="modal-header">
                           <h5 class="modal-title">MANAGE GROUPS</h5>
-                          <font-awesome-icon
+                          <i
+                            class="fa-solid fa-times mx-2"
                             type="button"
                             icon="fa-times"
-                            class="mx-2"
                             data-bs-dismiss="modal"
                             aria-label="Close"
                             title="cancel"
-                          />
+                          ></i>
                         </div>
                         <div class="modal-body px-4 pb-5">
-                          <font-awesome-icon icon="fa-exclamation-circle" />
+                          <i class="fa-solid fa-exclamation-circle"></i>
                           You can add a group by typing a group ID into the input
                           field and afterwards clicking the button with the plus sign.
                           <div class="d-flex my-3">
@@ -240,7 +243,7 @@
                               @click="addGroup"
                               :disabled="!setGroup"
                             >
-                             <font-awesome-icon icon="fa-plus" />
+                              <i class="fa-solid fa-plus"></i>
                               <span class="mx-1">Add group</span>
                             </button>
                           </div>
@@ -257,7 +260,7 @@
                               title="Click to remove this group"
                             >
                               <div class="mx-1">{{ g.groupId }}</div>
-                              <font-awesome-icon icon="far fa-times-circle" />
+                              <i class="fa-solid fa-times-circle"></i>
                             </div>
                           </div>
                         </div>
@@ -286,7 +289,7 @@
                       data-bs-toggle="tooltip"
                       title="Click to remove FollowUp Date"
                     >
-                      <font-awesome-icon icon="far fa-times-circle" />
+                      <i class="fa-solid fa-times-circle"></i>
                     </button>
                   </div>
                   <v-date-picker
@@ -303,7 +306,7 @@
                           @input="updateFollowUpDate"
                           placeholder="mm/dd/yyyy"
                         />
-                        <font-awesome-icon icon="far fa-calendar-alt" />
+                        <i class="fa-solid fa-calendar-alt"></i>
                       </div>
                     </template>
                   </v-date-picker>
@@ -327,7 +330,7 @@
                       data-bs-toggle="tooltip"
                       title="Click to remove Due date"
                     >
-                      <font-awesome-icon icon="far fa-times-circle" />
+                      <i class="fa-solid fa-times-circle"></i>
                     </button>
                   </div>
                   <v-date-picker
@@ -344,7 +347,7 @@
                           @input="updateDueDate"
                           placeholder="mm/dd/yyyy"
                         />
-                        <font-awesome-icon icon="far fa-calendar-alt" />
+                        <i class="fa-solid fa-calendar-alt"></i>
                       </div>
                     </template>
                   </v-date-picker>
@@ -480,7 +483,7 @@
               height: taskScrollableHeight
             }"
           >
-            <font-awesome-icon icon="fa-exclamation-circle" />
+            <i class="fa-solid fa-exclamation-circle"></i>
             <h4 class="mt-0 mx-2">Please select a task from the list</h4>
           </div>
         </div>
