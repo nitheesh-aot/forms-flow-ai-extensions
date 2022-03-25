@@ -4,18 +4,18 @@
     class="btn btn-secondary expand-btn"
     :class="{expanded: !maximize}"
   >
-    <font-awesome-icon
+    <i
       v-if="maximize"
-      icon="fa-chevron-left"
+      class="fa-solid fa-chevron-left"
       data-bs-toggle="tooltip"
       title="Click to expand the form"
-    />
-    <font-awesome-icon
-      v-if="maximize"
-      icon="fa-chevron-right"
+    ></i>
+    <i
+      v-else
+      class="fa-solid fa-chevron-right"
       data-bs-toggle="tooltip"
       title="Click to see the task list"
-    />
+    ></i>
   </button>
 </template>
 

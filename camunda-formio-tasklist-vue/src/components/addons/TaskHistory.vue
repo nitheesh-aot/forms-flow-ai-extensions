@@ -1,7 +1,7 @@
 <template>
   <div>
     <h3 class="mb-4">
-      <font-awesome-icon icon="far fa-list-alt" />
+      <i class="fa-solid fa-list-alt"></i>
       Application History</h3>
     <table
       class="table task-history-table"
@@ -27,7 +27,7 @@
               :href="formatURL(h.formUrl)"
               target="_blank"
             >
-              <font-awesome-icon icon="far fa-eye" />
+              <i class="fa-solid fa-eye"></i>
               View Submission
             </a>
           </td>
